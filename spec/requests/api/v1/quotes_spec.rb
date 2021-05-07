@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Quotes', type: :request do
   describe '/api/v1/quotes' do
+    before do
+      expect_any_instance_of(FetchQuote).to receive(:call).and_call_original
+    end
+
     context 'when ticker is invalid' do
       example do
         get api_v1_quote_path('ABC')
