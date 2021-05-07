@@ -1,0 +1,177 @@
+[
+  {
+    "ticker":"AAPL",
+    "ticker_color":"#666666",
+    "company_name":"Apple Inc"
+  },
+  {
+    "ticker":"AMC",
+    "ticker_color":"#E32226",
+    "company_name":"AMC Entertainment"
+  },
+  {
+    "ticker":"AMZN",
+    "ticker_color":"#C26C03",
+    "company_name":"Amazon.com, Inc."
+  },
+  {
+    "ticker":"FB",
+    "ticker_color":"#4267B2",
+    "company_name":"Facebook, Inc. Common Stock"
+  },
+  {
+    "ticker":"MSFT",
+    "ticker_color":"#737373",
+    "company_name":"Microsoft Corporation"
+  },
+  {
+    "ticker":"NVDA",
+    "ticker_color":"#5B9000",
+    "company_name":"NVIDIA Corporation"
+  },
+  {
+    "ticker":"TSLA",
+    "ticker_color":"#E31937",
+    "company_name":"Tesla Inc"
+  },
+  {
+    "ticker":"PINS",
+    "ticker_color":"#cc2127",
+    "company_name":"Pinterest Inc"
+  },
+  {
+    "ticker":"OKTA",
+    "ticker_color":"#017cc1",
+    "company_name":"Okta Inc"
+  },
+  {
+    "ticker":"UPS",
+    "ticker_color":"#a27c00",
+    "company_name":"United Parcel Service, Inc"
+  },
+  {
+    "ticker":"SQ",
+    "ticker_color":"#73767a",
+    "company_name":"Square Inc"
+  },
+  {
+    "ticker":"SBUX",
+    "ticker_color":"#01633b",
+    "company_name":"Starbucks Corporation"
+  },
+  {
+    "ticker":"QCOM",
+    "ticker_color":"#6a7dcd",
+    "company_name":"QUALCOMM, Inc."
+  },
+  {
+    "ticker":"WDAY",
+    "ticker_color":"#c16d02",
+    "company_name":"Workday Inc"
+  },
+  {
+    "ticker":"PTON",
+    "ticker_color":"#111215",
+    "company_name":"Peloton Interactive Inc"
+  },
+  {
+    "ticker":"ULTA",
+    "ticker_color":"#060606",
+    "company_name":"Ulta Beauty Inc"
+  },
+  {
+    "ticker":"SNAP",
+    "ticker_color":"#888601",
+    "company_name":"Snap Inc"
+  },
+  {
+    "ticker":"TDOC",
+    "ticker_color":"#351e65",
+    "company_name":"Teladoc Health Inc"
+  },
+  {
+    "ticker":"TGT",
+    "ticker_color":"#e50023",
+    "company_name":"Target Corporation"
+  },
+  {
+    "ticker":"PYPL",
+    "ticker_color":"#032f84",
+    "company_name":"Paypal Holdings Inc"
+  },
+  {
+    "ticker":"TWTR",
+    "ticker_color":"#1c7db7",
+    "company_name":"Twitter Inc"
+  },
+  {
+    "ticker":"V",
+    "ticker_color":"#01579f",
+    "company_name":"Visa Inc"
+  },
+  {
+    "ticker":"ETSY",
+    "ticker_color":"#dc5803",
+    "company_name":"Etsy Inc"
+  },
+  {
+    "ticker":"TWLO",
+    "ticker_color":"#f22e45",
+    "company_name":"Twilio Inc"
+  },
+  {
+    "ticker":"ADSK",
+    "ticker_color":"#09080a",
+    "company_name":"Autodesk, Inc."
+  },
+  {
+    "ticker":"NKE",
+    "ticker_color":"#010101",
+    "company_name":"Nike Inc"
+  },
+  {
+    "ticker":"BAC",
+    "ticker_color":"#000f5c",
+    "company_name":"Bank of America Corp"
+  },
+  {
+    "ticker":"CCF",
+    "ticker_color":"#025494",
+    "company_name":"Chase Corporation"
+  },
+  {
+    "ticker":"DDOG",
+    "ticker_color":"#7745a5",
+    "company_name":"Datadog Inc"
+  },
+  {
+    "ticker":"NET",
+    "ticker_color":"#c76917",
+    "company_name":"Cloudflare Inc"
+  },
+  {
+    "ticker":"ROKU",
+    "ticker_color":"#662d91",
+    "company_name":"Roku Inc"
+  },
+  {
+    "ticker":"RDFN",
+    "ticker_color":"#9f2020",
+    "company_name":"Redfin Corp"
+  },
+  {
+    "ticker":"TXG",
+    "ticker_color":"#ed175a",
+    "company_name":"10X Genomics Inc"
+  },
+  {
+    "ticker":"RKT",
+    "ticker_color":"#a72c3a",
+    "company_name":"Rocket Companies Inc"
+  },
+  {
+    "ticker":"UBER",
+    "ticker_color":"#050505",
+    "company_name":"Uber Technologies Inc"
+  }
+]
