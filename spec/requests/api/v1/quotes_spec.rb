@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Quotes', type: :request do
-  describe '/api/v1/quotes' do
+  describe 'GET /api/v1/quotes/:id' do
     before do
       expect_any_instance_of(FetchQuote).to receive(:call).and_call_original
     end
