@@ -20,6 +20,14 @@
     "ticker_color":"#0E963D",
     "company_name":"Spotify Technology SA",
     "tags":[
+      "lifestyle"
+    ]
+  },
+  {
+    "ticker":"SHOP",
+    "ticker_color":"#6C8C32",
+    "company_name":"Shopify Inc",
+    "tags":[
       "ecommerce"
     ]
   },
@@ -216,9 +224,7 @@
     "ticker":"ADSK",
     "ticker_color":"#09080A",
     "company_name":"Autodesk, Inc.",
-    "tags":[
-      "tech"
-    ]
+    "tags":null
   },
   {
     "ticker":"NKE",
@@ -306,6 +312,14 @@
     "company_name":"Toyota Motor Corp",
     "tags":[
       "auto"
+    ]
+  },
+  {
+    "ticker":"GME",
+    "ticker_color":"#ED3326",
+    "company_name":"GameStop Corp.",
+    "tags":[
+      "meme"
     ]
   }
 ]

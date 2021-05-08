@@ -34,7 +34,7 @@ class FetchWatchlist
     {
       uid: @watchlist_uid,
       name: watchlist['name'],
-      stocks: watchlist['tickers'].map{ |t| FetchQuote.new(t).call }
+      stocks: watchlist['tickers'].map{ |t| FetchStock.new(t).call }
     }
   end
 end

@@ -1,4 +1,4 @@
-class FetchQuote
+class FetchStock
   def initialize(ticker)
     @ticker = String(ticker).upcase
   end
@@ -15,7 +15,8 @@ class FetchQuote
       company_name: company_name,
       open_price: open_price,
       delta: change,
-      current_price: (open_price * factor(change)).round(2)
+      current_price: (open_price * factor(change)).round(2),
+      tags: tags
     }
   end
 
@@ -30,11 +31,15 @@ class FetchQuote
   end
 
   def ticker_color
-    $COMPANIES[@ticker]['ticker_color']
+    $COMPANIES[@ticker]['ticker_color'] || '#000'
   end
 
   def company_name
     $COMPANIES[@ticker]['company_name']
+  end
+
+  def tags
+    $COMPANIES[@ticker]['tags'] || []
   end
 end
 

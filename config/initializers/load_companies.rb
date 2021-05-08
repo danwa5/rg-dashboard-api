@@ -9,7 +9,8 @@ $COMPANIES = begin
   raw.each do |c|
     companies[c['ticker']] = {
       'company_name' => c['company_name'],
-      'ticker_color' => c['ticker_color']
+      'ticker_color' => c['ticker_color'],
+      'tags' => c['tags']
     }
   end
 

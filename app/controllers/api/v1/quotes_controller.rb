@@ -3,7 +3,7 @@ module Api
     class QuotesController < ApplicationController
       # GET /api/v1/quotes/:id
       def show
-        res = FetchQuote.new(ticker).call
+        res = FetchStock.new(ticker).call
         render json: { quote: res }, status: :ok
       rescue Exception => e
         render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request

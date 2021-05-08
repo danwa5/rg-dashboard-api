@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe FetchQuote do
+RSpec.describe FetchStock do
   subject { described_class.new(ticker) }
 
   describe '#call' do
