@@ -2,176 +2,310 @@
   {
     "ticker":"AAPL",
     "ticker_color":"#666666",
-    "company_name":"Apple Inc"
+    "company_name":"Apple Inc",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"AMC",
     "ticker_color":"#E32226",
-    "company_name":"AMC Entertainment"
+    "company_name":"AMC Entertainment",
+    "tags":[
+      "meme"
+    ]
+  },
+  {
+    "ticker":"SPOT",
+    "ticker_color":"#0E963D",
+    "company_name":"Spotify Technology SA",
+    "tags":[
+      "ecommerce"
+    ]
   },
   {
     "ticker":"AMZN",
     "ticker_color":"#C26C03",
-    "company_name":"Amazon.com, Inc."
+    "company_name":"Amazon.com, Inc.",
+    "tags":[
+      "ecommerce"
+    ]
   },
   {
     "ticker":"FB",
     "ticker_color":"#4267B2",
-    "company_name":"Facebook, Inc. Common Stock"
+    "company_name":"Facebook, Inc. Common Stock",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"MSFT",
     "ticker_color":"#737373",
-    "company_name":"Microsoft Corporation"
+    "company_name":"Microsoft Corporation",
+    "tags":[
+      "tech"
+    ]
   },
   {
     "ticker":"NVDA",
     "ticker_color":"#5B9000",
-    "company_name":"NVIDIA Corporation"
+    "company_name":"NVIDIA Corporation",
+    "tags":[
+      "chips"
+    ]
   },
   {
     "ticker":"TSLA",
     "ticker_color":"#E31937",
-    "company_name":"Tesla Inc"
+    "company_name":"Tesla Inc",
+    "tags":[
+      "auto",
+      "tech"
+    ]
   },
   {
     "ticker":"PINS",
-    "ticker_color":"#cc2127",
-    "company_name":"Pinterest Inc"
+    "ticker_color":"#CC2127",
+    "company_name":"Pinterest Inc",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"OKTA",
-    "ticker_color":"#017cc1",
-    "company_name":"Okta Inc"
+    "ticker_color":"#017CC1",
+    "company_name":"Okta Inc",
+    "tags":[
+      "tech"
+    ]
   },
   {
-    "ticker":"UPS",
-    "ticker_color":"#a27c00",
-    "company_name":"United Parcel Service, Inc"
+    "ticker":"BIGC",
+    "ticker_color":"#121117",
+    "company_name":"Bigcommerce Holdings Inc",
+    "tags":[
+      "ecommerce"
+    ]
+  },
+  {
+    "ticker":"WMT",
+    "ticker_color":"#0F72D5",
+    "company_name":"Walmart Inc",
+    "tags":[
+      "ecommerce",
+      "lifestyle"
+    ]
   },
   {
     "ticker":"SQ",
-    "ticker_color":"#73767a",
-    "company_name":"Square Inc"
+    "ticker_color":"#73767A",
+    "company_name":"Square Inc",
+    "tags":[
+      "ecommerce"
+    ]
   },
   {
     "ticker":"SBUX",
-    "ticker_color":"#01633b",
-    "company_name":"Starbucks Corporation"
+    "ticker_color":"#01633B",
+    "company_name":"Starbucks Corporation",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"QCOM",
-    "ticker_color":"#6a7dcd",
-    "company_name":"QUALCOMM, Inc."
+    "ticker_color":"#6A7DCD",
+    "company_name":"QUALCOMM, Inc.",
+    "tags":[
+      "chips"
+    ]
   },
   {
     "ticker":"WDAY",
-    "ticker_color":"#c16d02",
-    "company_name":"Workday Inc"
+    "ticker_color":"#C16D02",
+    "company_name":"Workday Inc",
+    "tags":[
+      "tech"
+    ]
   },
   {
     "ticker":"PTON",
     "ticker_color":"#111215",
-    "company_name":"Peloton Interactive Inc"
+    "company_name":"Peloton Interactive Inc",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"ULTA",
     "ticker_color":"#060606",
-    "company_name":"Ulta Beauty Inc"
+    "company_name":"Ulta Beauty Inc",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"SNAP",
     "ticker_color":"#888601",
-    "company_name":"Snap Inc"
+    "company_name":"Snap Inc",
+    "tags":[
+      "meme"
+    ]
   },
   {
     "ticker":"TDOC",
-    "ticker_color":"#351e65",
-    "company_name":"Teladoc Health Inc"
+    "ticker_color":"#351E65",
+    "company_name":"Teladoc Health Inc",
+    "tags":[
+      "health"
+    ]
   },
   {
     "ticker":"TGT",
-    "ticker_color":"#e50023",
-    "company_name":"Target Corporation"
+    "ticker_color":"#E50023",
+    "company_name":"Target Corporation",
+    "tags":[
+      "ecommerce",
+      "lifestyle"
+    ]
   },
   {
     "ticker":"PYPL",
-    "ticker_color":"#032f84",
-    "company_name":"Paypal Holdings Inc"
+    "ticker_color":"#032F84",
+    "company_name":"Paypal Holdings Inc",
+    "tags":[
+      "ecommerce",
+      "payment"
+    ]
   },
   {
     "ticker":"TWTR",
-    "ticker_color":"#1c7db7",
-    "company_name":"Twitter Inc"
+    "ticker_color":"#1C7DB7",
+    "company_name":"Twitter Inc",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"V",
-    "ticker_color":"#01579f",
-    "company_name":"Visa Inc"
+    "ticker_color":"#01579F",
+    "company_name":"Visa Inc",
+    "tags":[
+      "ecommerce",
+      "payment"
+    ]
   },
   {
     "ticker":"ETSY",
-    "ticker_color":"#dc5803",
-    "company_name":"Etsy Inc"
+    "ticker_color":"#DC5803",
+    "company_name":"Etsy Inc",
+    "tags":[
+      "ecommerce"
+    ]
   },
   {
     "ticker":"TWLO",
-    "ticker_color":"#f22e45",
-    "company_name":"Twilio Inc"
+    "ticker_color":"#F22E45",
+    "company_name":"Twilio Inc",
+    "tags":[
+      "tech"
+    ]
   },
   {
     "ticker":"ADSK",
-    "ticker_color":"#09080a",
-    "company_name":"Autodesk, Inc."
+    "ticker_color":"#09080A",
+    "company_name":"Autodesk, Inc.",
+    "tags":[
+      "tech"
+    ]
   },
   {
     "ticker":"NKE",
     "ticker_color":"#010101",
-    "company_name":"Nike Inc"
+    "company_name":"Nike Inc",
+    "tags":[
+      "lifestyle"
+    ]
   },
   {
     "ticker":"BAC",
-    "ticker_color":"#000f5c",
-    "company_name":"Bank of America Corp"
+    "ticker_color":"#000F5C",
+    "company_name":"Bank of America Corp",
+    "tags":[
+      "banks"
+    ]
   },
   {
     "ticker":"CCF",
     "ticker_color":"#025494",
-    "company_name":"Chase Corporation"
+    "company_name":"Chase Corporation",
+    "tags":[
+      "banks"
+    ]
   },
   {
     "ticker":"DDOG",
-    "ticker_color":"#7745a5",
-    "company_name":"Datadog Inc"
+    "ticker_color":"#7745A5",
+    "company_name":"Datadog Inc",
+    "tags":[
+      "tech"
+    ]
   },
   {
     "ticker":"NET",
-    "ticker_color":"#c76917",
-    "company_name":"Cloudflare Inc"
+    "ticker_color":"#C76917",
+    "company_name":"Cloudflare Inc",
+    "tags":[
+      "tech"
+    ]
   },
   {
     "ticker":"ROKU",
-    "ticker_color":"#662d91",
-    "company_name":"Roku Inc"
+    "ticker_color":"#662D91",
+    "company_name":"Roku Inc",
+    "tags":[
+      "meme"
+    ]
   },
   {
     "ticker":"RDFN",
-    "ticker_color":"#9f2020",
-    "company_name":"Redfin Corp"
+    "ticker_color":"#9F2020",
+    "company_name":"Redfin Corp",
+    "tags":[
+      "real estate"
+    ]
   },
   {
     "ticker":"TXG",
-    "ticker_color":"#ed175a",
-    "company_name":"10X Genomics Inc"
-  },
-  {
-    "ticker":"RKT",
-    "ticker_color":"#a72c3a",
-    "company_name":"Rocket Companies Inc"
+    "ticker_color":"#ED175A",
+    "company_name":"10X Genomics Inc",
+    "tags":[
+      "health"
+    ]
   },
   {
     "ticker":"UBER",
     "ticker_color":"#050505",
-    "company_name":"Uber Technologies Inc"
+    "company_name":"Uber Technologies Inc",
+    "tags":[
+      "lifestyle"
+    ]
+  },
+  {
+    "ticker":"COIN",
+    "ticker_color":"#0667D0",
+    "company_name":"Coinbase Global Inc",
+    "tags":[
+      "meme"
+    ]
+  },
+  {
+    "ticker":"TM",
+    "ticker_color":"#313636",
+    "company_name":"Toyota Motor Corp",
+    "tags":[
+      "auto"
+    ]
   }
 ]
