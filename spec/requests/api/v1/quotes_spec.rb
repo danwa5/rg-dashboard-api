@@ -6,7 +6,7 @@ RSpec.describe 'Quotes', type: :request do
       expect_any_instance_of(FetchStock).to receive(:call).and_call_original
     end
 
-    context 'when ticker is invalid' do
+    context 'when request raises exception' do
       example do
         get api_v1_quote_path('ABC')
 
@@ -21,7 +21,7 @@ RSpec.describe 'Quotes', type: :request do
       end
     end
 
-    context 'when ticker is valid' do
+    context 'when request is successful' do
       example do
         get api_v1_quote_path('AAPL')
 

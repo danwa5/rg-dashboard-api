@@ -12,24 +12,11 @@ class FetchWatchlist
   private
 
   def valid_watchlist?
-    watchlists.keys.include?(@watchlist_uid)
-  end
-
-  def watchlists
-    {
-      'a1b2c3' => {
-        'name' => 'Buy the Dip!!!',
-        'tickers' => %w(AMZN ETSY TSLA ROKU RDFN UBER SBUX)
-      },
-      'd4e5f6' => {
-        'name' => 'Undervalued Stocks',
-        'tickers' => %w(SNAP PINS SQ PTON TDOC DDOG)
-      }
-    }.freeze
+    $WATCHLISTS.keys.include?(@watchlist_uid)
   end
 
   def fetch_watchlist
-    watchlist = watchlists[@watchlist_uid]
+    watchlist = $WATCHLISTS[@watchlist_uid]
 
     {
       uid: @watchlist_uid,
