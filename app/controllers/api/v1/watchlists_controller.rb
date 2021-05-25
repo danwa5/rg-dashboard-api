@@ -7,7 +7,6 @@ module Api
           {
             uid: w[0],
             name: w[1]['name'],
-            stocks: w[1]['tickers'].map{ |t| FetchStock.new(t).call }
           }
         end
 

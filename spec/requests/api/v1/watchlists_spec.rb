@@ -2,25 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Watchlists', type: :request do
   describe 'GET /api/v1/watchlists' do
-    context 'when request raises exception' do
-      example do
-        allow_any_instance_of(FetchStock).to receive(:call).and_raise
+    example do
+      get api_v1_watchlists_path
 
-        get api_v1_watchlists_path
-
-        json = JSON.parse(response.body)
-        expect(response).to have_http_status(400)
-      end
-    end
-
-    context 'when request is successful' do
-      example do
-        get api_v1_watchlists_path
-
-        json = JSON.parse(response.body)
-        expect(response).to have_http_status(200)
-        expect(json['watchlists']).to be_present
-      end
+      json = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(json['watchlists']).to be_present
     end
   end
 
