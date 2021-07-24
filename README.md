@@ -14,16 +14,27 @@ $ bundle check || bundle install
 ```shell
 $ rails server
 ```
+### Authentication
+
+#### Get your user token
+```shell
+curl 'http://localhost:3000/authenticate' \
+  -X POST \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"<EMAIL>","password":"<PASSWORD>"}'
+```
 
 ### Usages
 
 #### Fetch a specific stock quote
 - `<TICKER>` is the stock's ticket symbol (e.g. AAPL for Apple)
+- `<TOKEN>` is the user's authentication token
+
 ```shell
 curl 'http://localhost:3000/api/v1/quotes/<TICKER>' \
   -X GET \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
+  -H 'Authorization: <TOKEN>' \
+  -H 'Content-Type: application/json'
 ```
 
 Sample Response:
@@ -44,12 +55,13 @@ Sample Response:
 ```
 
 #### Fetch all watch lists
+- `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists' \
   -X GET \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
+  -H 'Authorization: <TOKEN>' \
+  -H 'Content-Type: application/json'
 ```
 
 Sample Response:
@@ -70,11 +82,13 @@ Sample Response:
 
 #### Fetch a specific watch list and its stock quotes
 - `<WATCHLIST-UID>` is the unique identifier for a watch list
+- `<TOKEN>` is the user's authentication token
+
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
   -X GET \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
+  -H 'Authorization: <TOKEN>' \
+  -H 'Content-Type: application/json'
 ```
 
 Sample Response:
