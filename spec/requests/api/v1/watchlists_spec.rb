@@ -1,30 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe 'Watchlists', type: :request do
+  let(:user) { create(:user) }
+
+  before do
+    allow(AuthorizeApiRequest).to receive_message_chain(:call, :result).and_return(user)
+  end
+
   describe 'GET /api/v1/watchlists' do
+    before do
+      create_list(:watchlist, 3, user: user)
+    end
     example do
       get api_v1_watchlists_path
 
       json = JSON.parse(response.body)
+
       expect(response).to have_http_status(200)
-      expect(json['watchlists']).to be_present
+      expect(json['data'].count).to eq(3)
     end
   end
 
   describe 'GET /api/v1/watchlists/:id' do
-    before do
-      expect_any_instance_of(FetchWatchlist).to receive(:call).and_call_original
-    end
-
     context 'when request raises exception' do
       example do
+        expect_any_instance_of(FetchWatchlist).to receive(:call).and_call_original
+
         get api_v1_watchlist_path('abc')
 
         json = JSON.parse(response.body)
         expect(response).to have_http_status(400)
 
         aggregate_failures 'error attributes' do
-          expect(json['error']['title']).to eq('InvalidWatchlistError')
+          expect(json['error']['title']).to eq('WatchlistNotFoundError')
           expect(json['error']['code']).to eq('400')
           expect(json['error']['detail']).to eq('Watchlist not found')
         end
@@ -33,11 +41,20 @@ RSpec.describe 'Watchlists', type: :request do
 
     context 'when request is successful' do
       example do
-        get api_v1_watchlist_path('a1b2c3')
+        watchlist = create(:watchlist, user: user)
+
+        expect_any_instance_of(FetchWatchlist).to receive(:call).and_return(watchlist)
+
+        get api_v1_watchlist_path(watchlist.uid)
 
         json = JSON.parse(response.body)
+        res = json['data']
+
         expect(response).to have_http_status(200)
-        expect(json['watchlist']).to be_present
+        expect(res['id']).to eq(watchlist.uid)
+        expect(res['type']).to eq('watchlist')
+        expect(res['attributes']['name']).to eq(watchlist.name)
+        expect(res['attributes']['stocks'].map{ |s| s['ticker'] }).to eq(watchlist.stocks)
       end
     end
   end

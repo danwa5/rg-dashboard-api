@@ -9,5 +9,7 @@ class User
   field :email, type: String
   field :password_digest, type: String
 
+  has_many :watchlists
+
   validates_presence_of :uid, :email
 end

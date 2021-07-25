@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Quotes', type: :request do
+  before do
+    allow(AuthorizeApiRequest).to receive_message_chain(:call, :result).and_return(build(:user))
+  end
+
   describe 'GET /api/v1/quotes/:id' do
     before do
       expect_any_instance_of(FetchStock).to receive(:call).and_call_original

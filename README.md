@@ -67,20 +67,32 @@ curl 'http://localhost:3000/api/v1/watchlists' \
 Sample Response:
 ```shell
 {
-  "watchlists": [
+  "data": [
     {
-      "uid": "a1b2c3",
-      "name": "Buy the Dip!!!"
-    },
-    {
-      "uid": "d4e5f6",
-      "name": "Undervalued Stocks"
+      "id": "abc123",
+      "type": "watchlist",
+      "attributes": {
+        "name": "Buy the Dip!!!",
+        "stocks": [
+          {
+            "ticker": "AAPL",
+            "ticker_color": "#666666",
+            "company_name": "Apple Inc",
+            "open_price": 30.07,
+            "delta": 0.038,
+            "current_price": 31.21,
+            "tags": [
+              "lifestyle"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
 ```
 
-#### Fetch a specific watch list and its stock quotes
+#### Fetch a specific watch list
 - `<WATCHLIST-UID>` is the unique identifier for a watch list
 - `<TOKEN>` is the user's authentication token
 
@@ -94,34 +106,37 @@ curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
 Sample Response:
 ```shell
 {
-  "watchlist": {
-    "uid": "a1b2c3",
-    "name": "Buy the Dip!!!",
-    "stocks": [
-      {
-        "ticker": "AMZN",
-        "ticker_color": "#C26C03",
-        "company_name": "Amazon.com, Inc.",
-        "open_price": 61.91,
-        "delta": 0.217,
-        "current_price": 75.34,
-        "tags": [
-          "ecommerce"
-        ]
-      },
-      {
-        "ticker": "TSLA",
-        "ticker_color": "#E31937",
-        "company_name": "Tesla Inc",
-        "open_price": 72.05,
-        "delta": -0.264,
-        "current_price": 53.03,
-        "tags": [
-          "auto",
-          "tech"
-        ]
-      }
-    ]
+  "data": {
+    "id": "abc123",
+    "type": "watchlist",
+    "attributes": {
+      "name": "Buy the Dip!!!",
+      "stocks": [
+        {
+          "ticker": "AAPL",
+          "ticker_color": "#666666",
+          "company_name": "Apple Inc",
+          "open_price": 70.96,
+          "delta": -0.146,
+          "current_price": 60.6,
+          "tags": [
+            "lifestyle"
+          ]
+        },
+        {
+          "ticker": "TSLA",
+          "ticker_color": "#E31937",
+          "company_name": "Tesla Inc",
+          "open_price": 72.05,
+          "delta": -0.264,
+          "current_price": 53.03,
+          "tags": [
+            "auto",
+            "tech"
+          ]
+        }
+      ]
+    }
   }
 }
 ```

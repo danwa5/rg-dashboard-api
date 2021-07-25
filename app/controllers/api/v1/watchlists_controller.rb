@@ -3,22 +3,17 @@ module Api
     class WatchlistsController < ApplicationController
       # GET /api/v1/watchlists
       def index
-        res = $WATCHLISTS.to_a.map do |w|
-          {
-            uid: w[0],
-            name: w[1]['name'],
-          }
-        end
-
-        render json: { watchlists: res }, status: :ok
+        serializer = WatchlistSerializer.new(current_user.watchlists).serializable_hash
+        render json: serializer, status: :ok
       rescue Exception => e
         render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
       end
 
       # GET /api/v1/watchlists/:id
       def show
-        res = FetchWatchlist.new(watchlist_uid).call
-        render json: { watchlist: res }, status: :ok
+        watchlist = FetchWatchlist.new(current_user, watchlist_uid).call
+        serializer = WatchlistSerializer.new(watchlist).serializable_hash
+        render json: serializer, status: :ok
       rescue Exception => e
         render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
       end
