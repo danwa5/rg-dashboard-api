@@ -8,5 +8,6 @@ class Watchlist
 
   belongs_to :user
 
-  validates_presence_of :uid, :user
+  validates_presence_of :uid, :name, :user
+  validates :name, uniqueness: { scope: :user }
 end

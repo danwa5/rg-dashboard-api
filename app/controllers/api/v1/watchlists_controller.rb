@@ -18,10 +18,19 @@ module Api
         render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
       end
 
+      # POST /api/v1/watchlists
+      def create
+        res = CreateWatchlist.call(current_user, watchlist_params)
+        serializer = WatchlistSerializer.new(res.result, { params: { new_watchlist?: true }}).serializable_hash
+        render json: serializer, status: :created if res.success?
+      rescue Exception => e
+        render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
+      end
+
       private
 
       def watchlist_params
-        params.permit(:id)
+        params.permit(:id, :name, :stocks => []).to_h
       end
 
       def watchlist_uid

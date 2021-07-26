@@ -141,6 +141,36 @@ Sample Response:
 }
 ```
 
+#### Create a watch list
+
+```shell
+curl 'http://localhost:3000/api/v1/watchlists/' \
+  -X POST \
+  -H 'Authorization: <TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Stonks Watchlist",
+    "stocks": ["AMC","GME"]
+  }'
+```
+
+Sample Response:
+```shell
+{
+  "data": {
+    "id": "86923fb8-f990-4075-8077-5c6e44c1ef8d",
+    "type": "watchlist",
+    "attributes": {
+      "name": "Stonks Watchlist",
+      "stocks": [
+        "AMC",
+        "GME"
+      ]
+    }
+  }
+}
+```
+
 ### Run Test Suite
 ```shell
 $ rspec spec

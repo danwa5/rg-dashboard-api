@@ -58,4 +58,43 @@ RSpec.describe 'Watchlists', type: :request do
       end
     end
   end
+
+  describe 'POST /api/v1/watchlists' do
+    context 'when request raises exception' do
+      example do
+        params = { name: 'My Watchlist' }
+        expect(CreateWatchlist).to receive(:call).with(user, params).and_raise(RuntimeError, 'An error message')
+
+        post api_v1_watchlists_path, params: params
+
+        json = JSON.parse(response.body)
+        expect(response).to have_http_status(400)
+
+        aggregate_failures 'error attributes' do
+          expect(json['error']['title']).to eq('RuntimeError')
+          expect(json['error']['code']).to eq('400')
+          expect(json['error']['detail']).to eq('An error message')
+        end
+      end
+    end
+
+    context 'when request is successful' do
+      example do
+        params = { name: 'My Watchlist', stocks: %w(TSLA COIN) }
+        expect(CreateWatchlist).to receive(:call).with(user, params).and_call_original
+
+        post api_v1_watchlists_path, params: params
+
+        json = JSON.parse(response.body)
+        res = json['data']
+        watchlist = Watchlist.last
+
+        expect(response).to have_http_status(201)
+        expect(res['id']).to eq(watchlist.uid)
+        expect(res['type']).to eq('watchlist')
+        expect(res['attributes']['name']).to eq(watchlist.name)
+        expect(res['attributes']['stocks']).to eq(watchlist.stocks)
+      end
+    end
+  end
 end
