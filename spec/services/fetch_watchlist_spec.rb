@@ -7,7 +7,7 @@ RSpec.describe FetchWatchlist do
     context 'when watchlist is not found' do
       example do
         expect {
-          described_class.new(user, Faker::Alphanumeric.alphanumeric).call
+          described_class.call(user, Faker::Alphanumeric.alphanumeric)
         }.to raise_exception(WatchlistNotFoundError, 'Watchlist not found')
       end
     end
@@ -17,7 +17,7 @@ RSpec.describe FetchWatchlist do
         watchlist = create(:watchlist)
 
         expect {
-          described_class.new(user, watchlist.uid).call
+          described_class.call(user, watchlist.uid)
         }.to raise_exception(WatchlistNotFoundError, 'Watchlist not found')
       end
     end
@@ -26,12 +26,15 @@ RSpec.describe FetchWatchlist do
       example do
         watchlist = create(:watchlist, user: user)
 
-        res = described_class.new(user, watchlist.uid).call
+        res = described_class.call(user, watchlist.uid)
+        w = res.result
+
+        expect(res).to be_success
 
         aggregate_failures 'watchlist attributes' do
-          expect(res[:uid]).to eq(watchlist.uid)
-          expect(res[:name]).to eq(watchlist.name)
-          expect(res[:stocks]).to be_kind_of(Array)
+          expect(w[:uid]).to eq(watchlist.uid)
+          expect(w[:name]).to eq(watchlist.name)
+          expect(w[:stocks]).to be_kind_of(Array)
         end
       end
     end

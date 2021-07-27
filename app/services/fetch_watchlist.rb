@@ -1,4 +1,5 @@
 class FetchWatchlist
+  prepend SimpleCommand
   attr_reader :current_user, :watchlist_uid
 
   def initialize(current_user, watchlist_uid)

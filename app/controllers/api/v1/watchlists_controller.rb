@@ -11,7 +11,7 @@ module Api
 
       # GET /api/v1/watchlists/:id
       def show
-        watchlist = FetchWatchlist.new(current_user, watchlist_uid).call
+        watchlist = FetchWatchlist.call(current_user, watchlist_uid).result
         serializer = WatchlistSerializer.new(watchlist).serializable_hash
         render json: serializer, status: :ok
       rescue Exception => e

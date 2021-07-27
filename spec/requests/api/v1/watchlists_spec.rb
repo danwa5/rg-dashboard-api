@@ -24,7 +24,7 @@ RSpec.describe 'Watchlists', type: :request do
   describe 'GET /api/v1/watchlists/:id' do
     context 'when request raises exception' do
       example do
-        expect_any_instance_of(FetchWatchlist).to receive(:call).and_call_original
+        expect(FetchWatchlist).to receive(:call).and_call_original
 
         get api_v1_watchlist_path('abc')
 
@@ -43,7 +43,7 @@ RSpec.describe 'Watchlists', type: :request do
       example do
         watchlist = create(:watchlist, user: user)
 
-        expect_any_instance_of(FetchWatchlist).to receive(:call).and_return(watchlist)
+        expect(FetchWatchlist).to receive_message_chain(:call, :result).and_return(watchlist)
 
         get api_v1_watchlist_path(watchlist.uid)
 
