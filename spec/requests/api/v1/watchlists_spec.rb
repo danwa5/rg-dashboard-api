@@ -97,4 +97,38 @@ RSpec.describe 'Watchlists', type: :request do
       end
     end
   end
+
+  describe 'DELETE /api/v1/watchlists/:id' do
+    context 'when request raises exception' do
+      example do
+        expect(FetchWatchlist).to receive_message_chain(:call, :result).and_raise(WatchlistNotFoundError, 'An error message')
+
+        expect {
+          delete api_v1_watchlist_path('abc')
+        }.not_to change(Watchlist, :count)
+
+        json = JSON.parse(response.body)
+        expect(response).to have_http_status(400)
+
+        aggregate_failures 'error attributes' do
+          expect(json['error']['title']).to eq('WatchlistNotFoundError')
+          expect(json['error']['code']).to eq('400')
+          expect(json['error']['detail']).to eq('An error message')
+        end
+      end
+    end
+
+    context 'when request is successful' do
+      example do
+        watchlist = create(:watchlist, user: user)
+        expect(FetchWatchlist).to receive_message_chain(:call, :result).and_return(watchlist)
+
+        expect {
+          delete api_v1_watchlist_path('abc')
+        }.to change(Watchlist, :count).by(-1)
+
+        expect(response).to have_http_status(200)
+      end
+    end
+  end
 end

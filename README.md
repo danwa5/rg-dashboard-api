@@ -142,6 +142,7 @@ Sample Response:
 ```
 
 #### Create a watch list
+- `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists/' \
@@ -169,6 +170,22 @@ Sample Response:
     }
   }
 }
+```
+
+#### Delete a watch list
+- `<WATCHLIST-UID>` is the unique identifier for a watch list
+- `<TOKEN>` is the user's authentication token
+
+```shell
+curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
+  -X DELETE \
+  -H 'Authorization: <TOKEN>' \
+  -H 'Content-Type: application/json'
+```
+
+Sample Response:
+```shell
+{}
 ```
 
 ### Run Test Suite

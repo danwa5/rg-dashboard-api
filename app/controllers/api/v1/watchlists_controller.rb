@@ -27,6 +27,14 @@ module Api
         render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
       end
 
+      def destroy
+        watchlist = FetchWatchlist.call(current_user, watchlist_uid).result
+        watchlist.destroy!
+        render json: {}, status: :ok
+      rescue Exception => e
+        render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
+      end
+
       private
 
       def watchlist_params
