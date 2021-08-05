@@ -172,6 +172,21 @@ Sample Response:
 }
 ```
 
+#### Update a watch list
+- `<WATCHLIST-UID>` is the unique identifier for a watch list
+- `<TOKEN>` is the user's authentication token
+
+```shell
+curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
+  -X PATCH \
+  -H 'Authorization: <TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "My Top Picks",
+    "new_stocks": ["AMZN","ETSY"]
+  }'
+```
+
 #### Delete a watch list
 - `<WATCHLIST-UID>` is the unique identifier for a watch list
 - `<TOKEN>` is the user's authentication token

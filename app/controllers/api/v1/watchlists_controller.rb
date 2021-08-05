@@ -27,6 +27,16 @@ module Api
         render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
       end
 
+      # PATCH /api/v1/watchlists/:id
+      def update
+        watchlist = FetchWatchlist.call(current_user, watchlist_uid).result
+        res = UpdateWatchlist.call(watchlist, update_params)
+        render json: {}, status: :no_content if res.success?
+      rescue Exception => e
+        render json: { error: { title: e.class.to_s, code: '400', detail: e.message } }, status: :bad_request
+      end
+
+      # DELETE /api/v1/watchlists/:id
       def destroy
         watchlist = FetchWatchlist.call(current_user, watchlist_uid).result
         watchlist.destroy!
@@ -43,6 +53,10 @@ module Api
 
       def watchlist_uid
         watchlist_params.fetch(:id)
+      end
+
+      def update_params
+        params.permit(:name, :new_stocks => []).to_h
       end
     end
   end
