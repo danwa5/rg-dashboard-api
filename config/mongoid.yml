@@ -1,3 +1,10 @@
+production:
+  clients:
+    default:
+      uri: mongodb+srv://<%= "#{ENV['MONGODB_ATLAS_USER']}:#{ENV['MONGODB_ATLAS_PASSWORD']}" %>@cluster0.ibpxk.mongodb.net/rg_dashboard_api_prod?retryWrites=true'
+      options:
+        raise_not_found_error: false
+
 development:
   # Configure available database clients. (required)
   clients:
