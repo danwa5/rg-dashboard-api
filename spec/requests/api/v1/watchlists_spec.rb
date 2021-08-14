@@ -100,7 +100,7 @@ RSpec.describe 'Watchlists', type: :request do
 
   describe 'PATCH /api/v1/watchlists/:id' do
     let(:watchlist) { create(:watchlist) }
-    let(:params) { { name: 'My Top Picks', new_stocks: %w(SQ ETSY) } }
+    let(:params) { { name: 'My Top Picks', add_stocks: %w(SQ ETSY), remove_stocks: %w(BIGC)} }
 
     context 'when request raises exception' do
       example do

@@ -183,7 +183,8 @@ curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "My Top Picks",
-    "new_stocks": ["AMZN","ETSY"]
+    "add_stocks": ["AMZN","ETSY"],
+    "remove_stocks": ["BIGC"]
   }'
 ```
 

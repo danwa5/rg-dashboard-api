@@ -9,9 +9,18 @@ class UpdateWatchlist
   end
 
   def call
-    if new_stocks.any?
+    return if all_params_empty?
+
+    if add_stocks.any? || remove_stocks.any?
       sorted_set = SortedSet.new(watchlist.stocks)
-      sorted_set.merge(new_stocks)
+      sorted_set.merge(add_stocks) if add_stocks.any?
+
+      if remove_stocks.any?
+        remove_stocks.each do |stock|
+          sorted_set.delete_if { |set| set.include?(stock) }
+        end
+      end
+
       watchlist.stocks = sorted_set.to_a
     end
 
@@ -23,13 +32,26 @@ class UpdateWatchlist
 
   private
 
+  def all_params_empty?
+    watchlist_name.nil? && add_stocks.empty? && remove_stocks.empty?
+  end
+
   def watchlist_name
     params.fetch(:name, nil)
   end
 
-  def new_stocks
-    stocks = params.fetch(:new_stocks, [])
-    stocks.keep_if { |s| s.present? }
+  def add_stocks
+    @add_stocks ||= begin
+      stocks = params.fetch(:add_stocks, [])
+      stocks.keep_if { |s| s.present? }
+    end
+  end
+
+  def remove_stocks
+    @remove_stocks ||= begin
+      stocks = params.fetch(:remove_stocks, [])
+      stocks.keep_if { |s| s.present? }
+    end
   end
 end
 

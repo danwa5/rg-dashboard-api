@@ -56,7 +56,7 @@ module Api
       end
 
       def update_params
-        params.permit(:name, :new_stocks => []).to_h
+        params.permit(:name, :add_stocks => [], :remove_stocks => []).to_h
       end
     end
   end
