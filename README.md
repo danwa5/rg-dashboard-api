@@ -1,22 +1,41 @@
 # RG Dashboard API
 
-A Rails API to end points to fetch stock quotes and watch lists.
+A Rails API to end points to fetch stock quotes and watch lists. Valid ticker symbols can be found
+[here](config/companies.json).
 
 ## Development
 
 ### Initialization
+
 ```shell
 $ gem install bundler
 $ bundle check || bundle install
 ```
 
+### Start MongoDB
+
+```shell
+brew services start mongodb-community
+```
+
+### Seed database with test user
+
+```shell
+rails db:seed
+```
+
 ### Start server
+
 ```shell
 $ rails server
 ```
+
 ### Authentication
 
 #### Get your user token
+
+NOTE: If you want to get the user token for the test user, use the email and password found in [seed file](db/seeds.rb).
+
 ```shell
 curl 'http://localhost:3000/authenticate' \
   -X POST \
@@ -27,8 +46,9 @@ curl 'http://localhost:3000/authenticate' \
 ### Usages
 
 #### Fetch a specific stock quote
-- `<TICKER>` is the stock's ticket symbol (e.g. AAPL for Apple)
-- `<TOKEN>` is the user's authentication token
+
+-   `<TICKER>` is the stock's ticker symbol (e.g. AAPL for Apple)
+-   `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/quotes/<TICKER>' \
@@ -38,6 +58,7 @@ curl 'http://localhost:3000/api/v1/quotes/<TICKER>' \
 ```
 
 Sample Response:
+
 ```shell
 {
   "quote": {
@@ -55,7 +76,8 @@ Sample Response:
 ```
 
 #### Fetch all watch lists
-- `<TOKEN>` is the user's authentication token
+
+-   `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists' \
@@ -65,6 +87,7 @@ curl 'http://localhost:3000/api/v1/watchlists' \
 ```
 
 Sample Response:
+
 ```shell
 {
   "data": [
@@ -93,8 +116,9 @@ Sample Response:
 ```
 
 #### Fetch a specific watch list
-- `<WATCHLIST-UID>` is the unique identifier for a watch list
-- `<TOKEN>` is the user's authentication token
+
+-   `<WATCHLIST-UID>` is the unique identifier for a watch list
+-   `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
@@ -104,6 +128,7 @@ curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
 ```
 
 Sample Response:
+
 ```shell
 {
   "data": {
@@ -142,7 +167,8 @@ Sample Response:
 ```
 
 #### Create a watch list
-- `<TOKEN>` is the user's authentication token
+
+-   `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists/' \
@@ -156,6 +182,7 @@ curl 'http://localhost:3000/api/v1/watchlists/' \
 ```
 
 Sample Response:
+
 ```shell
 {
   "data": {
@@ -173,8 +200,9 @@ Sample Response:
 ```
 
 #### Update a watch list
-- `<WATCHLIST-UID>` is the unique identifier for a watch list
-- `<TOKEN>` is the user's authentication token
+
+-   `<WATCHLIST-UID>` is the unique identifier for a watch list
+-   `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
@@ -189,8 +217,9 @@ curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
 ```
 
 #### Delete a watch list
-- `<WATCHLIST-UID>` is the unique identifier for a watch list
-- `<TOKEN>` is the user's authentication token
+
+-   `<WATCHLIST-UID>` is the unique identifier for a watch list
+-   `<TOKEN>` is the user's authentication token
 
 ```shell
 curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
@@ -200,11 +229,13 @@ curl 'http://localhost:3000/api/v1/watchlists/<WATCHLIST-UID>' \
 ```
 
 Sample Response:
+
 ```shell
 {}
 ```
 
 ### Run Test Suite
+
 ```shell
 $ rspec spec
 ```
